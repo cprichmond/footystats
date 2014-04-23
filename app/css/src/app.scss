@@ -1,5 +1,10 @@
 
-div.stats-entry-row{
+div.stats-header-row{
+	margin: 0;
+}
+
+div.stats-entry-row {
+	@extend .stats-header-row;
 	padding-top: 0.4em;
 	padding-bottom: 0.4em;
 	background-color: #FFF;

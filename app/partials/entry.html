@@ -4,32 +4,37 @@
   </div>
 </div>
 
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div ng-repeat="stat in entryCtrl.model.stats">
+    
+      <div class="row stats-header-row">
+        <div class="col-xs-12">
+          {{stat.displayText}}
+        </div>
+      </div>
 
-<div ng-repeat="stat in entryCtrl.model.stats">
-  <div class="row stats-header-row">
-    <div class="col-xs-12">
-      {{stat.displayText}}
-    </div>
-  </div>
+      <div class="row stats-entry-row">
+        <div class="col-xs-5">
+          {{entryCtrl.model.homeTeamName}}
+        </div>
+        <div class="col-xs-2">{{stat.homeTeam[0]}}</div>
+        <div class="col-xs-5">
+          <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, true, 1, 1)">Add</button>
+          <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, true, 1, -1)">Rem</button>
+        </div>
+      </div>
 
-  <div class="row stats-entry-row">
-    <div class="col-xs-5">
-      {{entryCtrl.model.homeTeamName}}
-    </div>
-    <div class="col-xs-2">{{stat.homeTeam[0]}}</div>
-    <div class="col-xs-5">
-      <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, true, 1, 1)">Add</button>
-      <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, true, 1, -1)">Rem</button>
-    </div>
-  </div>
-  <div class="row stats-entry-row">
-    <div class="col-xs-5">
-      {{entryCtrl.model.awayTeamName}}
-    </div>
-    <div class="col-xs-2">{{stat.awayTeam[0]}}</div>
-    <div class="col-xs-5">
-      <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, false, 1, 1)">Add</button>
-      <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, false, 1, -1)">Rem</button>
+      <div class="row stats-entry-row">
+        <div class="col-xs-5">
+          {{entryCtrl.model.awayTeamName}}
+        </div>
+        <div class="col-xs-2">{{stat.awayTeam[0]}}</div>
+        <div class="col-xs-5">
+          <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, false, 1, 1)">Add</button>
+          <button type="default" class="btn btn-primary" ng-click="entryCtrl.modifyStat(stat.name, false, 1, -1)">Rem</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

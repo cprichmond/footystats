@@ -36,6 +36,12 @@ var statsDataService = function (localStorageService) {
 					homeTeam: [0,0,0,0],
 					awayTeam: [0,0,0,0]
 				},
+				{
+					name: 'tackles',
+					displayText: 'Tackles',
+					homeTeam: [0,0,0,0],
+					awayTeam: [0,0,0,0]
+				},
 
 			]
 		});
