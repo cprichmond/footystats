@@ -1,11 +1,25 @@
 
-div.stats-header-row{
+div.stats-row{
 	margin: 0;
 }
 
 div.stats-entry-row {
-	@extend .stats-header-row;
+	@extend .stats-row;
+	background-color: #fff;
 	padding-top: 0.4em;
 	padding-bottom: 0.4em;
-	background-color: #FFF;
 }
+
+div.stats-header-row {
+	@extend .stats-row;
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+}
+
+div.stats-title-row{
+	background-color: #ccc;
+	padding-bottom: 0.25em;
+	font-weight: bold;
+	border-bottom: 1px solid #000;
+}
+
