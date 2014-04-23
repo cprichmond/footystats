@@ -10,31 +10,47 @@
 </head>
 <body>
 
+  <!-- Sidebars -->
+
+  <div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar">
+    <h1 class="app-name">Menu</h1>
+
+    <div class="scrollable">
+      <div class="scrollable-content">
+        <div class="list-group" toggle="off" bubble target="mainSidebar">
+          <a class="list-group-item" href="#/entry">Entry <i class="fa fa-chevron-right pull-right"></i></a>
+          <a class="list-group-item" href="#/viewer">Viewer <i class="fa fa-chevron-right pull-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <div class="app">
     <div class="navbar navbar-app navbar-absolute-top">
-      <div class="navbar-brand navbar-brand-center">
-        Footy Stats
+      <div class="navbar-brand navbar-brand-center" yield-to="title">
+        <span>Footy Stats</span>
       </div>
 
       <div class="btn-group pull-left">
-        <div class="btn btn-navbar">
-          <a href="#/viewer">Viewer</a>
+        <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
+          <i class="fa fa-bars"></i> Menu
         </div>
       </div>
 
-      <div class="btn-group pull-right">
-        <a href="#/settings" class="btn btn-navbar">
-          <i class="fa fa-cogs fa-navbar"></i>
-          Settings
+      <div ng-show="mainCtrl.showClearAllButton" class="btn-group pull-right">
+        <a ng-href="#" class="btn btn-navbar" ng-click="mainCtrl.remove()">
+          <i class="fa fa-trash-o fa-navbar"></i>
+          Clear All
         </a>
       </div>
     </div>
 
     <div class="navbar navbar-app navbar-absolute-bottom">
       <div class="btn-group justified">
-        <a ng-href="#" class="btn btn-navbar" ng-click="mainCtrl.remove()">
-          <i class="fa fa-trash-o fa-navbar"></i>
-          Clear All
+        <a href="#/settings" class="btn btn-navbar">
+          <i class="fa fa-cogs fa-navbar"></i>
+          Settings
         </a>
       </div>
     </div>
@@ -44,9 +60,7 @@
     </div>
   </div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+ <!--TODO: Bundle and minify these js and above css files for production use-->
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-route/angular-route.js"></script>
   <script src="../bower_components/angular-local-storage/angular-local-storage.js"></script>
