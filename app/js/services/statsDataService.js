@@ -26,7 +26,7 @@ var statsDataService = function (localStorageService) {
 				},
 				{
 					name: 'centerClearances',
-					displayText: 'Center Clr.',
+					displayText: 'Center Clearances',
 					homeTeam: [0,0,0,0],
 					awayTeam: [0,0,0,0]
 				},
